@@ -577,9 +577,9 @@ function(a) {
         },
         h || {});
         var m = {
-            S00001: b("#L{º¬}"),
-            S00002: b("#L{µÄÎ¢²©}"),
-            S00003: b("#L{µÄÈË}")
+            S00001: b("#L{å«}"),
+            S00002: b("#L{çš„å¾®åš}"),
+            S00003: b("#L{çš„äºº}")
         };
         var k = {},
         f = null,
@@ -599,7 +599,7 @@ function(a) {
                         onComplete: j.onComplete
                     });
                     var o = a.C("span");
-                    o.innerHTML = "ÇëÑ¡ÔñËÑË÷µÄÎ¢²©";
+                    o.innerHTML = "è¯·é€‰æ‹©æœç´¢çš„å¾®åš";
                     var n = e.getPanel();
                     n.parentNode.insertBefore(o, n)
                 }
@@ -635,8 +635,8 @@ STK.jobsM.register("job.search",
 function(e) {
     var h = e.common.language;
     var f = {
-        S00001: h("#L{ËÑË÷Î¢²©¡¢ÕÒÈË}"),
-        S00002: h("#L{ÕÒÈË}")
+        S00001: h("#L{æœç´¢å¾®åšã€æ‰¾äºº}"),
+        S00002: h("#L{æ‰¾äºº}")
     };
     var g = $CONFIG.$FW == 0 && true;
     var a = {
@@ -1114,7 +1114,7 @@ function(a) {
 });
 STK.register("common.dialog",
 function(b) {
-    var a = '<table class="mBlogLayer" node-type="outer">		<tr><td class="top_l"></td><td class="top_c"></td><td class="top_r"></td></tr>		<tr>			<td class="mid_l"></td>			<td class="mid_c">				<div class="layerBox">					<div class="layerBoxTop">						<div node-type="title" class="topCon">							<strong node-type="titlestring"></strong>							<a href="javascript:void(0)" class="close" node-type="close" title="#L{¹Ø±Õ}"></a>							<div class="clearit"></div>						</div>					</div>					<div class="layerBoxCon" style="height:auto; width:390px;" node-type="inner"></div>				</div>			</td>			<td class="mid_r"></td>		</tr>		<tr><td class="bottom_l"></td><td class="bottom_c"></td><td class="bottom_r"></td></tr>	</table>';
+    var a = '<table class="mBlogLayer" node-type="outer">		<tr><td class="top_l"></td><td class="top_c"></td><td class="top_r"></td></tr>		<tr>			<td class="mid_l"></td>			<td class="mid_c">				<div class="layerBox">					<div class="layerBoxTop">						<div node-type="title" class="topCon">							<strong node-type="titlestring"></strong>							<a href="javascript:void(0)" class="close" node-type="close" title="#L{å…³é—­}"></a>							<div class="clearit"></div>						</div>					</div>					<div class="layerBoxCon" style="height:auto; width:390px;" node-type="inner"></div>				</div>			</td>			<td class="mid_r"></td>		</tr>		<tr><td class="bottom_l"></td><td class="bottom_c"></td><td class="bottom_r"></td></tr>	</table>';
     return function(g) {
         var e = b.module.mask();
         var j = [];
@@ -1274,7 +1274,7 @@ function(a) {
 });
 STK.register("common.confirm",
 function(g) {
-    var b = '<div class="commonLayer2" node-type="outer">		<div class="layerL"><img node-type="icon" src="' + $CONFIG.$BASECSS + 'style/images/common/PY_ib.gif" class="PY_ib PY_ib_3"></div>		<div style="width: 284px;" class="layerR">			<p class="txt font_14" node-type="inner"></p>			<div class="MIB_btn">				<a href="javascript:void(0);" class="btn_normal" node-type="apply"><em node-type="okLabel">È·¶¨</em></a>				<a href="javascript:void(0);" class="btn_notclick" node-type="cancel"><em node-type="cancelLabel">È¡Ïû</em></a>			</div>		</div>		<div class="clearit"></div>	</div>';
+    var b = '<div class="commonLayer2" node-type="outer">		<div class="layerL"><img node-type="icon" src="' + $CONFIG.$BASECSS + 'style/images/common/PY_ib.gif" class="PY_ib PY_ib_3"></div>		<div style="width: 284px;" class="layerR">			<p class="txt font_14" node-type="inner"></p>			<div class="MIB_btn">				<a href="javascript:void(0);" class="btn_normal" node-type="apply"><em node-type="okLabel">ç¡®å®š</em></a>				<a href="javascript:void(0);" class="btn_notclick" node-type="cancel"><em node-type="cancelLabel">å–æ¶ˆ</em></a>			</div>		</div>		<div class="clearit"></div>	</div>';
     var a = {
         warning: "PY_ib PY_ib_1",
         error: "PY_ib PY_ib_2",
@@ -1345,8 +1345,8 @@ function(g) {
         if (typeof j.html === "string") {
             k.html(j.html)
         }
-        k.okLabel(j.okLabel || "È·¶¨");
-        k.cancelLabel(j.cancelLabel || "È¡Ïû");
+        k.okLabel(j.okLabel || "ç¡®å®š");
+        k.cancelLabel(j.cancelLabel || "å–æ¶ˆ");
         if (j.OK) {
             k.applyFunction = j.OK
         }
@@ -1357,7 +1357,7 @@ function(g) {
             j.icon = "doubt"
         }
         k.getDom("icon").className = a[j.icon];
-        k.setMiddle().open(j.from || null).setTitle(j.title || "ÌáÊ¾")
+        k.setMiddle().open(j.from || null).setTitle(j.title || "æç¤º")
     }
 });
 STK.register("tool.io.ajax",
@@ -1542,8 +1542,8 @@ function(a) {
     scope.langList = function(f) {
         var e = f.value;
         var b = {
-            "zh-cn": "#L{È·ÈÏÇĞ»»µ½¼òÌå°æÂğ}",
-            "zh-tw": "#L{È·ÈÏÇĞ»»µ½·±Ìå°æÂğ}"
+            "zh-cn": "#L{ç¡®è®¤åˆ‡æ¢åˆ°ç®€ä½“ç‰ˆå—}",
+            "zh-tw": "#L{ç¡®è®¤åˆ‡æ¢åˆ°ç¹ä½“ç‰ˆå—}"
         };
         a.common.trans.global.regComplate("language",
         function(g, h) {
@@ -2232,7 +2232,7 @@ function _S_uaTrack(b, a) {
 }
 STK.register("common.alert",
 function(g) {
-    var b = '<div class="commonLayer2" node-type="outer">		<div class="layerL"><img node-type="icon" src="' + $CONFIG.$BASECSS + 'style/images/common/PY_ib.gif"></div>		<div style="width: 284px;" class="layerR">			<p class="txt font_14" node-type="inner"></p>			<div class="MIB_btn"> <a href="javascript:void(0);" class="btn_normal" node-type="btn"><em>È·¶¨</em></a> </div>		</div>		<div class="clearit"></div>	</div>';
+    var b = '<div class="commonLayer2" node-type="outer">		<div class="layerL"><img node-type="icon" src="' + $CONFIG.$BASECSS + 'style/images/common/PY_ib.gif"></div>		<div style="width: 284px;" class="layerR">			<p class="txt font_14" node-type="inner"></p>			<div class="MIB_btn"> <a href="javascript:void(0);" class="btn_normal" node-type="btn"><em>ç¡®å®š</em></a> </div>		</div>		<div class="clearit"></div>	</div>';
     var a = {
         warning: "PY_ib PY_ib_1",
         error: "PY_ib PY_ib_2",
@@ -2293,24 +2293,24 @@ function(g) {
             j.icon = "warning"
         }
         k.getDom("icon").className = a[j.icon];
-        k.setMiddle().open(j.from || null).setTitle(j.title || "ÌáÊ¾");
+        k.setMiddle().open(j.from || null).setTitle(j.title || "æç¤º");
         return k
     }
 });
 STK.register("common.sysmsg",
 function(a) {
     var b = {
-        A00001: "ºÜ±§Ç¸£¬¸ù¾İÏà¹Ø·¨¹æºÍÕş²ß£¬´Ë¹¦ÄÜÕıÔÚÎ¬»¤ÖĞ£¬»á¾¡¿ì»Ö¸´¡£ÈçĞè°ïÖúÇëÁªÏµ@Î¢²©Ğ¡ÃØÊé »òÕßÖÂµç¿Í·şµç»°400 690 0000¡£",
-        A00003: "ÎŞÈ¨ÏŞ²Ù×÷¡£",
-        A00006: "±£´æ³É¹¦",
-        E00001: "ÏµÍ³·±Ã¦",
-        E00002: "²ÎÊı´íÎó",
-        E00003: "È¨ÏŞ´íÎó",
-        M00003: "ÄãÉĞÎ´µÇÂ¼»òµÇÂ¼ÒÑ¹ıÆÚ£¬ÇëÖØĞÂµÇÂ¼¡£",
-        M00004: "ÏµÍ³·±Ã¦£¬ÇëÉÔºóÔÙÊÔ¡£",
-        M00009: "²ÎÊı´íÎó",
-        M01161: "·şÎñÆ÷¶È¼ÙÖĞ£¬Çë¸ôÌìÔÙÊÔ ",
-        M01120: "º¬ÓĞ·Ç·¨×Ö·û£¬ÇëĞŞ¸Ä"
+        A00001: "å¾ˆæŠ±æ­‰ï¼Œæ ¹æ®ç›¸å…³æ³•è§„å’Œæ”¿ç­–ï¼Œæ­¤åŠŸèƒ½æ­£åœ¨ç»´æŠ¤ä¸­ï¼Œä¼šå°½å¿«æ¢å¤ã€‚å¦‚éœ€å¸®åŠ©è¯·è”ç³»@å¾®åšå°ç§˜ä¹¦ æˆ–è€…è‡´ç”µå®¢æœç”µè¯400 690 0000ã€‚",
+        A00003: "æ— æƒé™æ“ä½œã€‚",
+        A00006: "ä¿å­˜æˆåŠŸ",
+        E00001: "ç³»ç»Ÿç¹å¿™",
+        E00002: "å‚æ•°é”™è¯¯",
+        E00003: "æƒé™é”™è¯¯",
+        M00003: "ä½ å°šæœªç™»å½•æˆ–ç™»å½•å·²è¿‡æœŸï¼Œè¯·é‡æ–°ç™»å½•ã€‚",
+        M00004: "ç³»ç»Ÿç¹å¿™ï¼Œè¯·ç¨åå†è¯•ã€‚",
+        M00009: "å‚æ•°é”™è¯¯",
+        M01161: "æœåŠ¡å™¨åº¦å‡ä¸­ï¼Œè¯·éš”å¤©å†è¯• ",
+        M01120: "å«æœ‰éæ³•å­—ç¬¦ï¼Œè¯·ä¿®æ”¹"
     };
     return function(f, h) {
         h = h || false;
@@ -2483,7 +2483,7 @@ function(e) {
             t: 100,
             zIndex: 500,
             icon: "warning",
-            content: '<div style="width:200px">¡¡</div>',
+            content: '<div style="width:200px">ã€€</div>',
             template: a,
             wipe: "pop"
         },
@@ -2593,30 +2593,30 @@ function(f) {
     e = f.common.language,
     j = f.common.bubble();
     var b = {
-        M01106: e("#L{ºÜ±§Ç¸£¬´Ë¹¦ÄÜÕıÔÚÎ¬»¤ÖĞ£¬ÔİÊ±ÎŞ·¨Ìá¹©¡£}"),
-        M01107: e("#L{ÇëÉÏ´«jpg¡¢gif¸ñÊ½µÄÍ¼Æ¬¡£}"),
-        M07006: e("#L{ÉÏ´«Ê§°Ü£¬ÇëÖØĞÂÉÏ´«¡£}"),
-        M01152: e("#L{ÇëÑ¡Ôñ²»³¬¹ı2MµÄÍ¼Æ¬}"),
-        M01109: e("#L{±£´æÊ§°Ü£¬ÇëÖØÊÔ¡£}"),
-        M01108: e("#L{ÇëÉÏ´«ÎÄ¼ş´óĞ¡²»³¬¹ı5MµÄÍ¼Æ¬¡£}"),
-        CX0182: e("#L{Ñ¡ÔñÕÕÆ¬}"),
-        CX0183: e("#L{ÕıÔÚ¼ÓÔØÏÖÓĞµÄÍ·Ïñ...}"),
-        CX0184: e("#L{ÕıÔÚ¶ÁÈ¡ÖĞ£¬ÇëÉÔºò...}"),
-        CX0185: e("#L{ÄãµÄÍ¼Æ¬ÎÄ¼ş³¬³ö5M»ò¿í¸ß³¬³ö2880ÏñËØ£¬ÇëÑ¡ÔñÎÄ¼şºÍ³ß´ç½ÏĞ¡µÄÍ¼Æ¬}"),
-        CX0186: e("#L{È¡Ïû}"),
-        CX0187: e("#L{ä¯ÀÀ...}"),
-        CX0188: e("#L{±£´æ}"),
-        CX0189: [e("#L{ÄúÉÏ´«µÄÍ·Ïñ»á×Ô¶¯Éú³ÉÈıÖÖ³ß´ç£¬}"), "\n", e("#L{Çë×¢ÒâÖĞĞ¡³ß´çµÄÍ·ÏñÊÇ·ñÇåÎú}")].join(""),
-        CX0190: e("#L{´ó³ß´çÍ·Ïñ£¬180¡Á180ÏñËØ}"),
-        CX0191: [e("#L{ÖĞ³ß´çÍ·Ïñ}"), "\n", e("#L{50¡Á50ÏñËØ}"), "\n", e("#L{(×Ô¶¯Éú³É)}")].join(""),
-        CX0192: [e("#L{Ğ¡³ß´çÍ·Ïñ}"), "\n", e("#L{30¡Á30ÏñËØ}"), "\n", e("#L{(×Ô¶¯Éú³É)}")].join(""),
-        CX0193: e("#L{½öÖ§³ÖJPG¡¢GIF¡¢PNGÍ¼Æ¬ÎÄ¼ş£¬ÇÒÎÄ¼şĞ¡ÓÚ5M}"),
-        CX0194: e("#L{ÏòÓÒĞı×ª}"),
-        CX0195: e("#L{Ïò×óĞı×ª}"),
-        CC1503: e("#L{ÇëµÈ´ıÍ¼Æ¬ÉÏ´«}"),
-        CC1501: e("#L{ÇëÑ¡ÔñÍ¼Æ¬}"),
-        CC1502: e("#L{ÎÄ¼ş¸ñÊ½²»ÕıÈ·£¬ÇëÑ¡ÔñJPG»òGIFÍ¼Æ¬¸ñÊ½}"),
-        CC1503: e("#L{ÇëµÈ´ıÍ¼Æ¬ÉÏ´« }")
+        M01106: e("#L{å¾ˆæŠ±æ­‰ï¼Œæ­¤åŠŸèƒ½æ­£åœ¨ç»´æŠ¤ä¸­ï¼Œæš‚æ—¶æ— æ³•æä¾›ã€‚}"),
+        M01107: e("#L{è¯·ä¸Šä¼ jpgã€gifæ ¼å¼çš„å›¾ç‰‡ã€‚}"),
+        M07006: e("#L{ä¸Šä¼ å¤±è´¥ï¼Œè¯·é‡æ–°ä¸Šä¼ ã€‚}"),
+        M01152: e("#L{è¯·é€‰æ‹©ä¸è¶…è¿‡2Mçš„å›¾ç‰‡}"),
+        M01109: e("#L{ä¿å­˜å¤±è´¥ï¼Œè¯·é‡è¯•ã€‚}"),
+        M01108: e("#L{è¯·ä¸Šä¼ æ–‡ä»¶å¤§å°ä¸è¶…è¿‡5Mçš„å›¾ç‰‡ã€‚}"),
+        CX0182: e("#L{é€‰æ‹©ç…§ç‰‡}"),
+        CX0183: e("#L{æ­£åœ¨åŠ è½½ç°æœ‰çš„å¤´åƒ...}"),
+        CX0184: e("#L{æ­£åœ¨è¯»å–ä¸­ï¼Œè¯·ç¨å€™...}"),
+        CX0185: e("#L{ä½ çš„å›¾ç‰‡æ–‡ä»¶è¶…å‡º5Mæˆ–å®½é«˜è¶…å‡º2880åƒç´ ï¼Œè¯·é€‰æ‹©æ–‡ä»¶å’Œå°ºå¯¸è¾ƒå°çš„å›¾ç‰‡}"),
+        CX0186: e("#L{å–æ¶ˆ}"),
+        CX0187: e("#L{æµè§ˆ...}"),
+        CX0188: e("#L{ä¿å­˜}"),
+        CX0189: [e("#L{æ‚¨ä¸Šä¼ çš„å¤´åƒä¼šè‡ªåŠ¨ç”Ÿæˆä¸‰ç§å°ºå¯¸ï¼Œ}"), "\n", e("#L{è¯·æ³¨æ„ä¸­å°å°ºå¯¸çš„å¤´åƒæ˜¯å¦æ¸…æ™°}")].join(""),
+        CX0190: e("#L{å¤§å°ºå¯¸å¤´åƒï¼Œ180Ã—180åƒç´ }"),
+        CX0191: [e("#L{ä¸­å°ºå¯¸å¤´åƒ}"), "\n", e("#L{50Ã—50åƒç´ }"), "\n", e("#L{(è‡ªåŠ¨ç”Ÿæˆ)}")].join(""),
+        CX0192: [e("#L{å°å°ºå¯¸å¤´åƒ}"), "\n", e("#L{30Ã—30åƒç´ }"), "\n", e("#L{(è‡ªåŠ¨ç”Ÿæˆ)}")].join(""),
+        CX0193: e("#L{ä»…æ”¯æŒJPGã€GIFã€PNGå›¾ç‰‡æ–‡ä»¶ï¼Œä¸”æ–‡ä»¶å°äº5M}"),
+        CX0194: e("#L{å‘å³æ—‹è½¬}"),
+        CX0195: e("#L{å‘å·¦æ—‹è½¬}"),
+        CC1503: e("#L{è¯·ç­‰å¾…å›¾ç‰‡ä¸Šä¼ }"),
+        CC1501: e("#L{è¯·é€‰æ‹©å›¾ç‰‡}"),
+        CC1502: e("#L{æ–‡ä»¶æ ¼å¼ä¸æ­£ç¡®ï¼Œè¯·é€‰æ‹©JPGæˆ–GIFå›¾ç‰‡æ ¼å¼}"),
+        CC1503: e("#L{è¯·ç­‰å¾…å›¾ç‰‡ä¸Šä¼  }")
     };
     var g = function(l) {
         var o = f.position(f.E("tips_place"));

@@ -5,7 +5,7 @@ $rs = array();
 
 switch($_GET['action']){
 
-	//ÉÏ´«ÁÙÊ±Í¼Æ¬
+	//ä¸Šä¼ ä¸´æ—¶å›¾ç‰‡
 	case 'uploadtmp':
 		$file = 'uploadtmp.jpg';
 		@move_uploaded_file($_FILES['Filedata']['tmp_name'], $file);
@@ -13,7 +13,7 @@ switch($_GET['action']){
 		$rs['url'] = './php/' . $file;
 	break;
 
-	//ÉÏ´«ÇĞÍ·Ïñ
+	//ä¸Šä¼ åˆ‡å¤´åƒ
 	case 'uploadavatar':
 		$input = file_get_contents('php://input');
 		$data = explode('--------------------', $input);

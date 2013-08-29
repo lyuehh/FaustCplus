@@ -1,7 +1,7 @@
 package view.ui
 {
     import flash.display.*;
-	/* [zhao]±¾Ò³Ó¦¸ÃÃ»ÓÐÊ²Ã´ÎÊÌâ */
+	/* [zhao]æœ¬é¡µåº”è¯¥æ²¡æœ‰ä»€ä¹ˆé—®é¢˜ */
     public class RectBox extends Sprite
     {
         private var _w:Number;
