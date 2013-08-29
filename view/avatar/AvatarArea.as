@@ -69,7 +69,7 @@
             label.wordWrap = true;
             label.selectable = false;
             label.width = 300;
-            label.text = Param.language["CX0189"] || "您上传的图片会自动生成三种尺寸\n请注意中小尺寸的图片是否清晰";
+            label.text = Param.language["CX0189"] || "hahahha";
             label.setTextFormat(_txtFormat);
 			addChild(label);
 
