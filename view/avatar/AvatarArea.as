@@ -69,7 +69,7 @@
             label.wordWrap = true;
             label.selectable = false;
             label.width = 300;
-            label.text = Param.language["CX0189"] || "hahahha";
+            label.text = || "预览";
             label.setTextFormat(_txtFormat);
 			addChild(label);
 

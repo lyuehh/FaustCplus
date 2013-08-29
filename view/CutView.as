@@ -27,7 +27,7 @@
         public var cameraBtn:MovieClip;
         public var browseComp:BrowseComp;
 		
-		public var colorAdj:ColorAdj;
+		// public var colorAdj:ColorAdj;
 		
         public function CutView(avatarModel:AvatarModel)
         {
@@ -75,11 +75,13 @@
 			if(Param.showBrow) addChild(this.browseComp);
             if(Param.showCame) addChild(this.cameraBtn);		// 摄像头
 			
-			this.colorAdj = new ColorAdj();
+			/*
+            this.colorAdj = new ColorAdj();
 			this.colorAdj.x = 430;
 			this.colorAdj.y = 300;
 			addChild(this.colorAdj);
-			
+			*/
+
 			initAvatars(null);
             return;
         }
@@ -110,7 +112,8 @@
             var _bigBmd = _bigPic.bitmapData;
             var _newBmd = new BitmapData(Param.pSize[2], Param.pSize[3]);
 				_newBmd.draw(_bigBmd, new Matrix(_bigPic.scaleX, 0, 0, _bigPic.scaleX, 0, 0), null, null, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), true);
-			_newBmd.applyFilter(_newBmd, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), new Point(0, 0), this.colorAdj.filter);
+			_newBmd.applyFilter(_newBmd, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), new Point(0, 0));
+ //           _newBmd.applyFilter(_newBmd, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), new Point(0, 0), this.colorAdj.filter);
 			
 			//生成编码容器
 			var jpgEncoder:JPGEncoder = new JPGEncoder(100);
@@ -154,7 +157,7 @@
         {
 			//上传或载入成功后重置（大中小）预览框
             this.avatarArea.initAvatars(this.avatarModel.bmd);
-			this.colorAdj.setImages([this.avatarArea.bigPic, this.avatarArea.midPic, this.avatarArea.smallPic]);
+			//this.colorAdj.setImages([this.avatarArea.bigPic, this.avatarArea.midPic, this.avatarArea.smallPic]);
 			if(event != null){
 				this.localPicArea.setLocalPicSize(this.avatarModel.bmd);
 				this.localPicArea.loaddingUI.visible = false;
@@ -270,7 +273,7 @@
             this.localPicArea.visible = false;
             this.avatarArea.visible = false;
             this.splitLines.visible = false;
-			this.colorAdj.visible = false;
+			//this.colorAdj.visible = false;
             if (this.saveBtn != null && this.saveBtn.visible == true)
             {
                 this.cancleBtn.visible = false;

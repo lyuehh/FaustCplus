@@ -43,7 +43,7 @@
                 x = 0;
                 y = 38;
                 defaultTextFormat = labelFormat;
-                text = Param.language["CX0193"] || "仅支持JPG、GIF、PNG图片文件，且文件小于2M";
+                text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";
             }
             addChild(this.label);
             this.btnBrowse = new SK_Browse() as MovieClip;

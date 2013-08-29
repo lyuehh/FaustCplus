@@ -61,7 +61,7 @@
 			Param.s = this.swfStage;
             Param.uid = this.parameter["uid"];
 			// 默认图片地址
-			Param.pSize=this.parameter["pSize"] ? (this.parameter["pSize"]) : '300|300|150|150';
+			Param.pSize=this.parameter["pSize"] ? (this.parameter["pSize"]) : '300|300|150|150'; // '300|300|110|135|74|90|65|80' 生成三种尺寸的再往后拼几列数据即可
 			Param.pSize=(Param.pSize).split("|");
 			for(var i in Param.pSize){
 				Param.pSize[i]=int(Param.pSize[i]);
@@ -76,7 +76,7 @@
 		
 			Param.jsFunc = this.parameter["jsfunc"];
             Param.jsLang = this.parameter["jslang"];
-            Param.initLanguage();
+            //Param.initLanguage();
 
             this.Version = this.getVersion();
             this.avatarModel = new AvatarModel();

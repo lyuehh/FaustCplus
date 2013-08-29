@@ -51,8 +51,6 @@
                 _loc_1 = ExternalInterface.call(Param.jsLang);
                 if (_loc_1 != null)
                 {
-                    Param.language["CX0189"] = _loc_1["CX0189"];
-                    Param.language["CX0193"] = _loc_1["CX0193"];
                     _loc_1 = null;
                 }
             }
