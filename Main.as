@@ -61,7 +61,7 @@
 			Param.s = this.swfStage;
             Param.uid = this.parameter["uid"];
 			// 默认图片地址
-			Param.pSize=this.parameter["pSize"] ? (this.parameter["pSize"]) : '300|300|110|135|74|90|65|80';
+			Param.pSize=this.parameter["pSize"] ? (this.parameter["pSize"]) : '300|300|150|150';
 			Param.pSize=(Param.pSize).split("|");
 			for(var i in Param.pSize){
 				Param.pSize[i]=int(Param.pSize[i]);
