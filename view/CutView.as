@@ -287,8 +287,14 @@
         {
             if (this.saveBtn == null)
             {
-                this.saveBtn = new SK_Save();
-				this.cancleBtn = new SK_Cancel();
+                //this.saveBtn = new SK_Save();
+				//this.cancleBtn = new SK_Cancel();
+
+                this.saveBtn = new Button();
+                this.cancleBtn = new Button();
+                saveBtn.label = "缩小";
+                cancleBtn.label = "放大";
+
                 this.saveBtn.x = 20;
 				this.cancleBtn.x = 100;
                 this.saveBtn.y = this.cancleBtn.y = Param.pSize[1]+110;
