@@ -14,6 +14,7 @@
     import view.browse.*;
     import view.camera.*;
     import view.localpic.*;
+    import fl.controls.Button;
 
     public class CutView extends Sprite
     {
