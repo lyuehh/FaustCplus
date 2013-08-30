@@ -9,6 +9,7 @@
     import view.*;
     import view.avatar.*;
     import view.ui.*;
+    import fl.controls.Button;
 
 	/*
 	* 摄像头拍摄
@@ -32,7 +33,7 @@
         private var _nowPicture:Bitmap;
         private var _delayTime:int = 0;
         private var _nowBMP:Bitmap;
-        public var cameraBtn:SK_BtnCamera;
+        public var cameraBtn;//:SK_BtnCamera;
         private var _avatar:AvatarArea;
         private var _t:Timer;
 
@@ -247,7 +248,10 @@
 
         private function addViewElements() : void
         {
-            this.cameraBtn = new SK_BtnCamera();
+            //this.cameraBtn = new SK_BtnCamera();
+            this.cameraBtn = new Button();
+            this.cameraBtn.label = '拍照';
+            this.cameraBtn.width = 50;
             this.cameraBtn.x = 96;
             this.cameraBtn.y = 345;
             this.cameraBtn.addEventListener(MouseEvent.CLICK, this.beginCountDown);

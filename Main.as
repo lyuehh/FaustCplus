@@ -8,6 +8,7 @@
     import flash.ui.*;
     import model.*;
     import view.*;
+    import FileLog;
 
     public class Main extends Sprite
     {
@@ -49,6 +50,7 @@
             this.swfStage.scaleMode = StageScaleMode.NO_SCALE;
 			
             this.parameter = this.loaderInfo.parameters;
+            FileLog.trace('aaaa');
 			/*
 			用AS2时，可以直接把参数加在flash的尾部，如:demo.swf?u1=good&u2=bad
 			在flash里就默认u1,u2为根变量。可以使用_root.u1和_root.u2来得到值

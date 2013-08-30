@@ -24,8 +24,8 @@
 		private var cutBox_minW:Number = 30;
         private var cutBox_minH:Number = 30;
 
-        private var TurnLeft:SK_TurnLeft;
-		private var TurnRight:SK_TurnRight;
+        private var TurnLeft;//:SK_TurnLeft;
+		private var TurnRight;//:SK_TurnRight;
         private var cutAreaBg:RectBox;
 
         private var flagCurX:Number;
@@ -83,9 +83,15 @@
             tip.mouseEnabled = false;
 
 			 //左右旋转
+             /*
             TurnLeft = new SK_TurnLeft();
-			TurnRight = new SK_TurnRight();
+			TurnRight = new SK_TurnRight();*/
+            TurnLeft = new Button();
+            TurnRight = new Button();
+            TurnLeft.label = '向左旋转';
+            TurnRight.label = '向右旋转';
             TurnLeft.y = TurnRight.y = Param.pSize[1] + 12;
+            TurnLeft.width = TurnRight.width = 70;
             TurnRight.x = 220;
 			TurnLeft.addEventListener(MouseEvent.CLICK, rotationPicLeft);
             TurnRight.addEventListener(MouseEvent.CLICK, rotationPicRight);
@@ -108,20 +114,21 @@
 			btnZoomIn.width = btnZoomOut.width = 50;
 			btnZoomIn.y = btnZoomOut.y = Param.pSize[1] + 12;
 			btnZoomIn.x = 100;
-			btnZoomOut.x = 150;			
+			btnZoomOut.x = 150;
 			btnZoomIn.addEventListener(MouseEvent.CLICK, zoomIn);
             btnZoomOut.addEventListener(MouseEvent.CLICK, zoomOut);			
 			addChild(btnZoomIn);
 			addChild(btnZoomOut);
+
 			
 			//底图遮罩
 			var _picMask:Sprite = new Sprite();
-			_picMask.graphics.beginFill(0xFF); 
+			_picMask.graphics.beginFill(0xFF);
 			_picMask.graphics.drawRect(0, 0, Param.pSize[0], Param.pSize[1]);
 			_picMask.graphics.endFill();
 			_picMask.x = _picMask.y = 1;
 			addChild(_picMask);
-			_picContainer.mask = _picMask;			
+			_picContainer.mask = _picMask;
 
 			return;
         }

@@ -9,13 +9,14 @@
     import flash.text.*;
     import model.*;
     import view.*;
+    import fl.controls.Button;
 
 	/**
 	* 本地上传图片
 	*/
     public class BrowseComp extends Sprite
     {
-        public var btnBrowse:MovieClip;
+        public var btnBrowse;//:MovieClip;
         private var _parent:CutView;
         private var _avatarModel:AvatarModel;
         private var _imgFilter:FileFilter;
@@ -46,7 +47,10 @@
                 text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";
             }
             addChild(this.label);
-            this.btnBrowse = new SK_Browse() as MovieClip;
+            //this.btnBrowse = new SK_Browse() as MovieClip;
+            this.btnBrowse = new Button();
+            this.btnBrowse.label = '上传本地图片';
+            this.btnBrowse.width = 80;
             this.btnBrowse.buttonMode = true;
             this.btnBrowsAddEvents();
             this._avatarModel = cutModel;
@@ -100,11 +104,11 @@
         {
             if (event.type == MouseEvent.MOUSE_OVER)
             {
-                this.btnBrowse.gotoAndStop(2);
+                //this.btnBrowse.gotoAndStop(2);
             }
             else
             {
-                this.btnBrowse.gotoAndStop(1);
+                //this.btnBrowse.gotoAndStop(1);
             }
             return;
         }
@@ -147,7 +151,7 @@
         {
             this.btnBrowse.removeEventListener(MouseEvent.MOUSE_OUT, this.changeStatus);
             this.btnBrowse.removeEventListener(MouseEvent.MOUSE_OVER, this.changeStatus);
-            this.btnBrowse.gotoAndStop(3);
+            //this.btnBrowse.gotoAndStop(3);
             return;
         }
 
@@ -276,7 +280,7 @@
                 this.label.visible = true;
 				//stop();
             }
-            this._parent.cameraBtn.gotoAndStop(1);
+           // this._parent.cameraBtn.gotoAndStop(1);
             this._fileRef.browse([this._imgFilter]);
             this._fileRef.addEventListener(Event.SELECT, this.onFileSelected);
             this._fileRef.addEventListener(Event.CANCEL, this.onCancel);

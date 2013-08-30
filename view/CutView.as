@@ -15,6 +15,7 @@
     import view.camera.*;
     import view.localpic.*;
     import fl.controls.Button;
+    import FileLog;
 
     public class CutView extends Sprite
     {
@@ -23,8 +24,8 @@
         public var localPicArea:LocalPicArea;
         public var avatarModel:AvatarModel;
         public var cameraArea:CameraComp;
-        public var saveBtn:SK_Save;
-        public var cancleBtn:SK_Cancel;
+        public var saveBtn;//:SK_Save;
+        public var cancleBtn;//:SK_Cancel;
         public var cameraBtn:MovieClip;
         public var browseComp:BrowseComp;
 		
@@ -286,21 +287,34 @@
 		// 创建显示保存 取消按钮
         public function addSaveBtns() : void
         {
+            FileLog.trace( '000' );
             if (this.saveBtn == null)
             {
                 //this.saveBtn = new SK_Save();
 				//this.cancleBtn = new SK_Cancel();
+                //this.saveBtn.x = 20;
+                //this.cancleBtn.x = 100;
+                //this.saveBtn.y = this.cancleBtn.y = Param.pSize[1]+110;
 
-                this.saveBtn = new Button();
-                this.cancleBtn = new Button();
-                saveBtn.label = "缩小";
-                cancleBtn.label = "放大";
+                var btn1 = new Button();
+                btn1.label = '保存';
+                btn1.x = 350;
+                btn1.y = 300;
+                btn1.width = 50;
+                btn1.addEventListener(MouseEvent.CLICK,this.updateAvatar);
 
-                this.saveBtn.x = 20;
-				this.cancleBtn.x = 100;
-                this.saveBtn.y = this.cancleBtn.y = Param.pSize[1]+110;
+                var btn2 = new Button();
+                btn2.label = '取消11';
+                btn2.x = 430;
+                btn2.y = 300;
+                btn2.width = 50;
+                btn2.addEventListener(MouseEvent.CLICK,this.cancelProgramm);
+
+                this.saveBtn = btn1;
+                this.cancleBtn = btn2;
                 addChild(this.saveBtn);
                 addChild(this.cancleBtn);
+
 				// 保存按钮
 				this.saveBtn.mouseEnabled = true;
 				this.saveBtn.addEventListener(MouseEvent.CLICK, this.updateAvatar);
