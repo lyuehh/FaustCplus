@@ -26,7 +26,7 @@
         public var cameraArea:CameraComp;
         public var saveBtn;//:SK_Save;
         public var cancleBtn;//:SK_Cancel;
-        public var cameraBtn:MovieClip;
+        public var cameraBtn;//:MovieClip;
         public var browseComp:BrowseComp;
 		
 		// public var colorAdj:ColorAdj;
@@ -55,7 +55,10 @@
             this.browseComp = new BrowseComp(this.avatarModel);
             this.browseComp.x = 20;
             this.browseComp.y = 5;
-            this.cameraBtn = new SK_Camera() as MovieClip;
+            //this.cameraBtn = new SK_Camera() as MovieClip;
+            this.cameraBtn = new Button();
+            this.cameraBtn.label = '拍照上传';
+            this.cameraBtn.width = '80';
             this.cameraBtn.x = 155;
             this.cameraBtn.y = 5;
             this.cameraBtn.buttonMode = true;
@@ -92,11 +95,11 @@
         {
             if (event.type == MouseEvent.MOUSE_OVER)
             {
-                this.cameraBtn.gotoAndStop(2);
+                //this.cameraBtn.gotoAndStop(2);
             }
             else
             {
-                this.cameraBtn.gotoAndStop(1);
+                //this.cameraBtn.gotoAndStop(1);
             }
             return;
         }
@@ -170,8 +173,8 @@
 
         private function cameraBtnRemoveEvents() : void
         {
-            this.cameraBtn.removeEventListener(MouseEvent.MOUSE_OUT, this.changeCameraBtnStatus);
-            this.cameraBtn.removeEventListener(MouseEvent.MOUSE_OVER, this.changeCameraBtnStatus);
+            //this.cameraBtn.removeEventListener(MouseEvent.MOUSE_OUT, this.changeCameraBtnStatus);
+            //this.cameraBtn.removeEventListener(MouseEvent.MOUSE_OVER, this.changeCameraBtnStatus);
             this.cameraBtn.removeEventListener(MouseEvent.CLICK, this.showCameraArea);
             return;
         }
@@ -232,8 +235,8 @@
 
         public function cameraBtnAddEvents() : void
         {
-            this.cameraBtn.addEventListener(MouseEvent.MOUSE_OVER, this.changeCameraBtnStatus);
-            this.cameraBtn.addEventListener(MouseEvent.MOUSE_OUT, this.changeCameraBtnStatus);
+            //this.cameraBtn.addEventListener(MouseEvent.MOUSE_OVER, this.changeCameraBtnStatus);
+            //this.cameraBtn.addEventListener(MouseEvent.MOUSE_OUT, this.changeCameraBtnStatus);
             this.cameraBtn.addEventListener(MouseEvent.CLICK, this.showCameraArea);
             return;
         }
@@ -246,7 +249,7 @@
             {
                 this.cameraArea.visible = false;
                 this.cameraBtn.mouseEnabled = true;
-                this.cameraBtn.gotoAndStop(1);
+                //this.cameraBtn.gotoAndStop(1);
                 this.cameraBtnAddEvents();
             }
             this.localPicArea.visible = true;
@@ -257,8 +260,8 @@
         {
             this.cameraBtnRemoveEvents();
             this.cameraBtn.mouseEnabled = false;
-            this.cameraBtn.gotoAndStop(3);
-            this.browseComp.btnBrowse.gotoAndStop(1);
+            //this.cameraBtn.gotoAndStop(3);
+            //this.browseComp.btnBrowse.gotoAndStop(1);
             this.browseComp.btnBrowsAddEvents();
             if (this.cameraArea == null)
             {
@@ -304,7 +307,7 @@
                 btn1.addEventListener(MouseEvent.CLICK,this.updateAvatar);
 
                 var btn2 = new Button();
-                btn2.label = '取消11';
+                btn2.label = '取消';
                 btn2.x = 430;
                 btn2.y = 300;
                 btn2.width = 50;

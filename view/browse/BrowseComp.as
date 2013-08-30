@@ -142,15 +142,15 @@
         public function btnBrowsAddEvents() : void
         {
             this.btnBrowse.addEventListener(MouseEvent.CLICK, this.selectLocalPic);
-            this.btnBrowse.addEventListener(MouseEvent.MOUSE_OVER, this.changeStatus);
-            this.btnBrowse.addEventListener(MouseEvent.MOUSE_OUT, this.changeStatus);
+            //this.btnBrowse.addEventListener(MouseEvent.MOUSE_OVER, this.changeStatus);
+            //this.btnBrowse.addEventListener(MouseEvent.MOUSE_OUT, this.changeStatus);
             return;
         }
 
         public function btnBrowsRemoveEvents() : void
         {
-            this.btnBrowse.removeEventListener(MouseEvent.MOUSE_OUT, this.changeStatus);
-            this.btnBrowse.removeEventListener(MouseEvent.MOUSE_OVER, this.changeStatus);
+            //this.btnBrowse.removeEventListener(MouseEvent.MOUSE_OUT, this.changeStatus);
+            //this.btnBrowse.removeEventListener(MouseEvent.MOUSE_OVER, this.changeStatus);
             //this.btnBrowse.gotoAndStop(3);
             return;
         }
