@@ -155,7 +155,7 @@
 				cancleBtn.visible = true;
 				saveBtn.visible = true;
 				cameraBtn.mouseEnabled = true;
-				colorAdj.visible = true;
+				//colorAdj.visible = true;
 			}
             this.visible = false;
             return;

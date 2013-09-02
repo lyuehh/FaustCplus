@@ -80,12 +80,10 @@ package view
 			if(Param.showBrow) addChild(this.browseComp);
             if(Param.showCame) addChild(this.cameraBtn);		// 摄像头
 			
-			/*
-            this.colorAdj = new ColorAdj();
-			this.colorAdj.x = 430;
-			this.colorAdj.y = 300;
-			addChild(this.colorAdj);
-			*/
+            //this.colorAdj = new ColorAdj();
+			//this.colorAdj.x = 430;
+			//this.colorAdj.y = 300;
+			//addChild(this.colorAdj);
 
 			initAvatars(null);
             return;
