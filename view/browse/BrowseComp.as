@@ -1,4 +1,4 @@
-﻿package view.browse
+package view.browse
 {
     //import com.adobe.serialization.json.*;
     import flash.display.*;

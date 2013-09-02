@@ -1,4 +1,4 @@
-﻿package model
+package model
 {
     import flash.external.*;
     import flash.utils.*;

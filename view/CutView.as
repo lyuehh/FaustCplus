@@ -1,4 +1,4 @@
-﻿package view
+package view
 {
     import com.adobe.images.*;
     //import com.adobe.serialization.json.*;
