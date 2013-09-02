@@ -46,12 +46,12 @@ package view.browse
                 y = 38;
                 defaultTextFormat = labelFormat;
                 //text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";
-                text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";//Param.lang.info1;
+                text = Param.lang.info1;//Param.lang.info1;
             }
             addChild(this.label);
             //this.btnBrowse = new SK_Browse() as MovieClip;
             this.btnBrowse = new Button();
-            this.btnBrowse.label = "保存";//Param.lang.info2;
+            this.btnBrowse.label = Param.lang.info2;//
             this.btnBrowse.width = 80;
             this.btnBrowse.buttonMode = true;
             this.btnBrowsAddEvents();

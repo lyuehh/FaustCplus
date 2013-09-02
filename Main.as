@@ -81,13 +81,7 @@ package
 			Param.jsFunc = this.parameter["jsfunc"];
             Param.jsLang = this.parameter["jslang"];
             FileLog.trace('11');
-            //Param.lang = JSON.decode(this.parameter['lang']);
-            FileLog.trace(this.parameter['lang']);
-            FileLog.trace(JSON);
-            FileLog.trace('22');
-            //FileLog.trace(typeof JSON.encode);
-            //FileLog.trace(JSON.encode({"a":"b"}));
-            //FileLog.trace(JSON.decode(this.parameter['lang']));
+            Param.lang = Param.langObj[this.parameter['lang']];
             //Param.initLanguage();
 
             this.Version = this.getVersion();

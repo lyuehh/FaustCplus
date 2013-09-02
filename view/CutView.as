@@ -57,7 +57,7 @@ package view
             this.browseComp.y = 5;
             //this.cameraBtn = new SK_Camera() as MovieClip;
             this.cameraBtn = new Button();
-            this.cameraBtn.label = '拍照上传';
+            this.cameraBtn.label = Param.lang.info3;// 拍照上传
             this.cameraBtn.width = '80';
             this.cameraBtn.x = 155;
             this.cameraBtn.y = 5;
@@ -299,14 +299,14 @@ package view
                 //this.saveBtn.y = this.cancleBtn.y = Param.pSize[1]+110;
 
                 var btn1 = new Button();
-                btn1.label = '保存';
+                btn1.label = Param.lang.info9; // 保存
                 btn1.x = 350;
                 btn1.y = 300;
                 btn1.width = 50;
                 btn1.addEventListener(MouseEvent.CLICK,this.updateAvatar);
 
                 var btn2 = new Button();
-                btn2.label = '取消';
+                btn2.label = Param.lang.info10; // 取消
                 btn2.x = 430;
                 btn2.y = 300;
                 btn2.width = 50;

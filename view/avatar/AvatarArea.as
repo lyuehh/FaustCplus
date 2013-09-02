@@ -69,7 +69,7 @@
             label.wordWrap = true;
             label.selectable = false;
             label.width = 300;
-            label.text = "预览";
+            label.text = Param.lang.info8; // 预览
             label.setTextFormat(_txtFormat);
 			addChild(label);
 

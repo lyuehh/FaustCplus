@@ -88,8 +88,8 @@
 			TurnRight = new SK_TurnRight();*/
             TurnLeft = new Button();
             TurnRight = new Button();
-            TurnLeft.label = '向左旋转';
-            TurnRight.label = '向右旋转';
+            TurnLeft.label = Param.lang.info4; // 向左旋转
+            TurnRight.label = Param.lang.info5; // 向右旋转
             TurnLeft.y = TurnRight.y = Param.pSize[1] + 12;
             TurnLeft.width = TurnRight.width = 70;
             TurnRight.x = 220;
@@ -109,12 +109,12 @@
 			
 			var btnZoomIn = new Button();
 			var btnZoomOut = new Button();
-			btnZoomIn.label = "缩小";
-			btnZoomOut.label = "放大";
-			btnZoomIn.width = btnZoomOut.width = 50;
+			btnZoomIn.label = Param.lang.info6; // 缩小
+			btnZoomOut.label = Param.lang.info7; // 放大
+			btnZoomIn.width = btnZoomOut.width = 70;
 			btnZoomIn.y = btnZoomOut.y = Param.pSize[1] + 12;
-			btnZoomIn.x = 100;
-			btnZoomOut.x = 150;
+			btnZoomIn.x = 75;
+			btnZoomOut.x = 145;
 			btnZoomIn.addEventListener(MouseEvent.CLICK, zoomIn);
             btnZoomOut.addEventListener(MouseEvent.CLICK, zoomOut);			
 			addChild(btnZoomIn);
