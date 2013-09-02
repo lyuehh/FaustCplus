@@ -20,6 +20,10 @@
         public static var ticketTime:Number;
         public static var language:Object;
 
+        public static var langObj:Object;
+        public static var lang:Object;
+
+
         public function Param() : void
         {
             return;

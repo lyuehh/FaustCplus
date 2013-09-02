@@ -10,6 +10,7 @@
     import model.*;
     import view.*;
     import fl.controls.Button;
+    import FileLog;
 
 	/**
 	* 本地上传图片
@@ -44,12 +45,13 @@
                 x = 0;
                 y = 38;
                 defaultTextFormat = labelFormat;
-                text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";
+                //text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";
+                text = "仅支持JPG、GIF、PNG图片文件，且文件小于2M";//Param.lang.info1;
             }
             addChild(this.label);
             //this.btnBrowse = new SK_Browse() as MovieClip;
             this.btnBrowse = new Button();
-            this.btnBrowse.label = '上传本地图片';
+            this.btnBrowse.label = "保存";//Param.lang.info2;
             this.btnBrowse.width = 80;
             this.btnBrowse.buttonMode = true;
             this.btnBrowsAddEvents();

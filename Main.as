@@ -1,5 +1,6 @@
 ﻿package
 {
+    //import com.adobe.serialization.json.*;
     import flash.external.*;
     import com.sina.utils.*;
     import flash.display.*;
@@ -50,6 +51,7 @@
             this.swfStage.scaleMode = StageScaleMode.NO_SCALE;
 			
             this.parameter = this.loaderInfo.parameters;
+            FileLog.trace(this.loaderInfo.parameters);
             FileLog.trace('aaaa');
 			/*
 			用AS2时，可以直接把参数加在flash的尾部，如:demo.swf?u1=good&u2=bad
@@ -78,6 +80,14 @@
 		
 			Param.jsFunc = this.parameter["jsfunc"];
             Param.jsLang = this.parameter["jslang"];
+            FileLog.trace('11');
+            //Param.lang = JSON.decode(this.parameter['lang']);
+            FileLog.trace(this.parameter['lang']);
+            FileLog.trace(JSON);
+            FileLog.trace('22');
+            //FileLog.trace(typeof JSON.encode);
+            //FileLog.trace(JSON.encode({"a":"b"}));
+            //FileLog.trace(JSON.decode(this.parameter['lang']));
             //Param.initLanguage();
 
             this.Version = this.getVersion();

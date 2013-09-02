@@ -290,7 +290,6 @@
 		// 创建显示保存 取消按钮
         public function addSaveBtns() : void
         {
-            FileLog.trace( '000' );
             if (this.saveBtn == null)
             {
                 //this.saveBtn = new SK_Save();
