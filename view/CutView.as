@@ -1,7 +1,7 @@
 ﻿package view
 {
     import com.adobe.images.*;
-    import com.adobe.serialization.json.*;
+    //import com.adobe.serialization.json.*;
     import events.*;
     import flash.display.*;
     import flash.events.*;
@@ -197,7 +197,7 @@
             loader.removeEventListener(IOErrorEvent.IO_ERROR, this.errorHandler);
 			
             var _json = loader.data.match(/\{.+\}/)[0];
-            var returnData = JSON.decode(_json);
+            var returnData = JSON.parse(_json);
 			if (returnData["status"] == "1")
             {
 				try

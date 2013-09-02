@@ -1,6 +1,6 @@
 ﻿package view.browse
 {
-    import com.adobe.serialization.json.*;
+    //import com.adobe.serialization.json.*;
     import flash.display.*;
     import flash.events.*;
     import flash.external.*;
@@ -77,7 +77,7 @@
             this._fileRef.removeEventListener(DataEvent.UPLOAD_COMPLETE_DATA, this.startPhotoCut);
             this._fileRef.removeEventListener(IOErrorEvent.IO_ERROR, this.upTmpPhotoError);
             this._fileRef.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.upTmpPhotoError);
-            var jsons = JSON.decode(evt["data"]);
+            var jsons = JSON.parse(evt["data"]);
             if (jsons["status"] == "1")
             {
                 if (jsons["url"])
