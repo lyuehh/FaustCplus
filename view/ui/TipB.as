@@ -4,6 +4,7 @@ package view.ui
     import flash.events.*;
     import flash.external.*;
     import flash.text.*;
+    import model.*;
 
     public class TipB extends Sprite
     {
@@ -27,7 +28,7 @@ package view.ui
                 x = 70;
                 y = 80;
                 defaultTextFormat = titFormat;
-                text = "没有检测到摄像头";
+                text = Param.lang.info11; //没有检测到摄像头
             }
             var descFormat = new TextFormat("宋体", 12, 6710886);
             descFormat.leading = 10;
@@ -42,8 +43,8 @@ package view.ui
             this._desc.multiline = true;
             this._desc.wordWrap = true;
             this._desc.defaultTextFormat = descFormat;
-            this._desc.htmlText = "1.检查电脑是否连接摄像头。\n2.检查摄像头是否被其他程序占用。\n3.检查是否拒绝了FlashPlayer的访问：鼠标右键->设置->允许。\n4.如果不是以上原因，请尝试刷新页面";
- //           this._desc.htmlText = "1.检查电脑是否连接摄像头。\n2.检查摄像头是否被其他程序占用。\n3.检查是否拒绝了FlashPlayer的访问：鼠标右键->设置->允许。\n4.如果不是以上原因，请尝试<a href=\'event:#\'><font color=\'#FF6600\'>刷新页面</font></a>。";
+            this._desc.htmlText = Param.lang.info12;
+            //this._desc.htmlText = "1.检查电脑是否连接摄像头。\n2.检查摄像头是否被其他程序占用。\n3.检查是否拒绝了FlashPlayer的访问：鼠标右键->设置->允许。\n4.如果不是以上原因，请尝试<a href=\'event:#\'><font color=\'#FF6600\'>刷新页面</font></a>。";
             this._desc.addEventListener(TextEvent.LINK, this.linkHandler);
             addChildAt(this._bg, 0);
             addChildAt(this._tit, 1);

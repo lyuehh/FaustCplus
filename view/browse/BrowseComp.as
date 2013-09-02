@@ -269,8 +269,9 @@ package view.browse
                 	localPicArea.visible = true;
                 	avatarArea.visible = true;
                 	splitLines.visible = true;
-					colorAdj.visible = true;
+					//colorAdj.visible = true;
                 	cameraArea.visible = false;
+                    
 					if (saveBtn != null){
 						cancleBtn.visible = true;
 						saveBtn.visible = true;

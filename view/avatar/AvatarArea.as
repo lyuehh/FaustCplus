@@ -74,7 +74,7 @@
 			addChild(label);
 
 			// 大头像文本框
-            this.bigTxt	= this.setText(Param.pSize[2],0,Param.pSize[3]+46,Param.pSize[2]+"*"+Param.pSize[3]+"像素",_txtFormat2);
+            this.bigTxt	= this.setText(Param.pSize[2],0,Param.pSize[3]+46,Param.pSize[2]+"*"+Param.pSize[3],_txtFormat2);
 			addChild(this.bigTxt);
 			// 中头像文本框
 			if(Param.pSize[4]>0){

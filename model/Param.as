@@ -21,6 +21,7 @@ package model
         public static var ticketTime:Number;
         public static var language:Object;
         public static var lang:Object;
+        public static var jsLang;
         public static var langObj:Object = {
             "zh_cn": {
                 "info1": "仅支持JPG、GIF、PNG图片文件，且文件小于2M",
@@ -32,10 +33,22 @@ package model
                 "info7": "放大",
                 "info8": "预览",
                 "info9": "保存",
-                "info10": "取消"
+                "info10": "取消",
+                "info11": "没有检测到摄像头",
+                "info12": "1.检查电脑是否连接摄像头。\n2.检查摄像头是否被其他程序占用。\n3.检查是否拒绝了FlashPlayer的访问：鼠标右键->设置->允许。\n4.如果不是以上原因，请尝试刷新页面",
+                "info13": "拍照"
             },
             "zh_tw": {
-
+                "info1": "僅支持JPG、GIF、PNG圖片文件，且文件小於2M",
+                "info2": "上傳本地圖片",
+                "info3": "拍照上傳",
+                "info4": "向左旋轉",
+                "info5": "向右旋轉",
+                "info6": "縮小",
+                "info7": "放大",
+                "info8": "預覽",
+                "info9": "保存",
+                "info10": "取消"
             },
             "en_us": {
                 "info1": "Select JPG, GIF, PNG file, and < 2M",
@@ -47,7 +60,10 @@ package model
                 "info7": "Zoom Out",
                 "info8": "Preview",
                 "info9": "Save",
-                "info10": "Cancel"
+                "info10": "Cancel",
+                "info11": "No Carema Found",
+                "info12": "1.Check if the camera connected to the computer.\n2.Check if the camera is used by other program.\n3.Check if the FlashPlayer is forbid：Right Click->Setting->Allow.\n4.Or you can try to refresh the page",
+                "info13": "Take"
             }
         };
         FileLog.trace(langObj);
