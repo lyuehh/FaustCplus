@@ -51,8 +51,8 @@ package
             this.swfStage.scaleMode = StageScaleMode.NO_SCALE;
 			
             this.parameter = this.loaderInfo.parameters;
+            FileLog.trace('parameters:');
             FileLog.trace(this.loaderInfo.parameters);
-            FileLog.trace('aaaa');
 			/*
 			用AS2时，可以直接把参数加在flash的尾部，如:demo.swf?u1=good&u2=bad
 			在flash里就默认u1,u2为根变量。可以使用_root.u1和_root.u2来得到值
@@ -65,14 +65,16 @@ package
 			Param.s = this.swfStage;
             Param.uid = this.parameter["uid"];
 			// 默认图片地址
-			Param.pSize=this.parameter["pSize"] ? (this.parameter["pSize"]) : '300|300|150|150'; // '300|300|110|135|74|90|65|80' 生成三种尺寸的再往后拼几列数据即可
+			Param.pSize=this.parameter["pSize"] ? (this.parameter["pSize"]) : '300|300|150|150';
+            // '300|300|110|135|74|90|65|80' 生成三种尺寸的再往后拼几列数据即可
 			Param.pSize=(Param.pSize).split("|");
 			for(var i in Param.pSize){
 				Param.pSize[i]=int(Param.pSize[i]);
 			}
+            //FileLog.trace('Param.pSize: ' + Param);
 
-            Param.imgUrl = this.parameter["imgUrl"] ? (this.parameter["imgUrl"]) : ("http://images1.jyimg.com/w4/global/i/zwzp_f.jpg");
-            Param.uploadUrl = this.parameter["uploadUrl"] ? (this.parameter["uploadUrl"]) : ("http://flashman.com.cn/Flash/FaustCplus/branches/common/php/saveavater.php?action=uploadavatar");
+            Param.imgUrl = this.parameter["imgUrl"];
+            Param.uploadUrl = this.parameter["uploadUrl"];
 
 			Param.uploadSrc = (this.parameter["uploadSrc"] == "true") ? true : false;
 			Param.showBrow = (this.parameter["showBrow"] == "true") ? true : false;
@@ -80,7 +82,6 @@ package
 		
 			Param.jsFunc = this.parameter["jsfunc"];
             Param.jsLang = this.parameter["jslang"];
-            FileLog.trace('11');
             Param.lang = Param.langObj[this.parameter['lang']];
             //Param.initLanguage();
 

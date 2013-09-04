@@ -16,6 +16,7 @@ package view
     import view.localpic.*;
     import fl.controls.Button;
     import FileLog;
+    import UploadPostHelper;
 
     public class CutView extends Sprite
     {
@@ -105,42 +106,70 @@ package view
 		// 开始上传头像
         public function updateAvatar(event:MouseEvent) : void
         {
+            FileLog.trace('start uplading...');
+            FileLog.trace('url: ' + Param.uploadUrl);
             this.localPicArea.loaddingUI.visible = true;
 			this.localPicArea.cutBox.visible = false;
 			
 			this.saveBtn.mouseEnabled = false;
             var _uploadUrl:String = Param.uploadUrl; // + "?action=uploadavatar&" + new Date().getTime();
 			var _srcBmd = this.localPicArea._sourceBMD;
+            FileLog.trace('start uplading 111...');
             var _bigPic = this.avatarArea.bigPic;
             var _bigBmd = _bigPic.bitmapData;
             var _newBmd = new BitmapData(Param.pSize[2], Param.pSize[3]);
 				_newBmd.draw(_bigBmd, new Matrix(_bigPic.scaleX, 0, 0, _bigPic.scaleX, 0, 0), null, null, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), true);
-			_newBmd.applyFilter(_newBmd, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), new Point(0, 0));
- //           _newBmd.applyFilter(_newBmd, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), new Point(0, 0), this.colorAdj.filter);
+            FileLog.trace('start uplading 222...');
+            //newBmd.applyFilter(_newBmd, new Rectangle(0, 0, Param.pSize[2], Param.pSize[3]), new Point(0, 0), this.colorAdj.filter);
 			
 			//生成编码容器
+            FileLog.trace('create jpeg...');
 			var jpgEncoder:JPGEncoder = new JPGEncoder(100);
 			//将位图数据编码到容器内成为ByteArray流
 			//var jpgStream:ByteArray = jpgEncoder.encode(_srcBmd);
 			var jpgStream = new ByteArray();
 			jpgStream.writeBytes(jpgEncoder.encode(_newBmd));
-			jpgStream.writeMultiByte("--------------------", "utf8");
+			//jpgStream.writeMultiByte("--------------------", "utf8");
 			
 			if(Param.uploadSrc) jpgStream.writeBytes(jpgEncoder.encode(_srcBmd));
 			
 			//添加stream的header请求
-			var header:URLRequestHeader = new URLRequestHeader("Content-type", "application/octet-stream");
+            FileLog.trace('create urlrequest...');
 			var jpgURLRequest:URLRequest = new URLRequest(_uploadUrl);
-			jpgURLRequest.requestHeaders.push(header);
 			jpgURLRequest.method = URLRequestMethod.POST;
-			jpgURLRequest.contentType = "application/octet-stream";
-			jpgURLRequest.data = jpgStream;
 
+            FileLog.trace('create data...');
+            //jpgURLRequest.dataFormat = URLLoaderDataFormat.BINARY;
+            FileLog.trace('create data, boundary: ' +UploadPostHelper.getBoundary());
+            jpgURLRequest.requestHeaders.push(new URLRequestHeader('Content-Type', 'multipart/form-data; boundary=' + UploadPostHelper.getBoundary()));
+			jpgURLRequest.data = UploadPostHelper.getPostData('aaa.jpg', jpgStream,'upload_image');
+            
+            FileLog.trace('create urlloader...');
 			var loader:URLLoader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, this.uploadComplete);
 			loader.addEventListener(IOErrorEvent.IO_ERROR, this.errorHandler);
-			loader.load(jpgURLRequest);
+            loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.errorHandler);
+            loader.addEventListener(ProgressEvent.PROGRESS,this.progressHandler);
+            loader.addEventListener(HTTPStatusEvent.HTTP_STATUS,this.statusHandler);
+            loader.addEventListener(Event.OPEN,this.openHandler);
+            try {
+                loader.load(jpgURLRequest);
+            } catch (error) {
+                FileLog.trace('loader error');
+            }
 			return;
+        }
+        private function openHandler(event) : void 
+        {
+            FileLog.trace('open...');
+        }
+        private function statusHandler(event) : void 
+        {
+            FileLog.trace('status code: ' + event.status);
+        }
+        private function progressHandler(event) : void 
+        {
+            FileLog.trace('progress...');
         }
 
         private function cancelProgramm(event:MouseEvent) : void
@@ -181,6 +210,8 @@ package view
 		// 上传成功，返回json
         private function uploadComplete(event:Event) : void
         {
+            FileLog.trace('upload succ..');
+            
             var _delurl:String;
             var _suc:Boolean;
             var _ticket:String;
@@ -196,6 +227,7 @@ package view
 			
             var _json = loader.data.match(/\{.+\}/)[0];
             var returnData = JSON.parse(_json);
+            FileLog.trace('return data:' + JSON.stringify(returnData));
 			if (returnData["status"] == "1")
             {
 				try
@@ -222,6 +254,7 @@ package view
 		// 上传失败
         private function errorHandler(event:IOErrorEvent) : void
         {
+            FileLog.trace('upload error');
             this.localPicArea.loaddingUI.visible = false;
 			this.localPicArea.cutBox.visible = true;
 			
@@ -264,7 +297,7 @@ package view
             if (this.cameraArea == null)
             {
                 this.cameraArea = new CameraComp(this);
-                this.cameraArea.x = 199;
+                this.cameraArea.x = 139;// 199
                 this.cameraArea.y = 80;
                 addChild(this.cameraArea);
             }
@@ -301,14 +334,14 @@ package view
                 btn1.x = 350;
                 btn1.y = 300;
                 btn1.width = 50;
-                btn1.addEventListener(MouseEvent.CLICK,this.updateAvatar);
+                //btn1.addEventListener(MouseEvent.CLICK,this.updateAvatar);
 
                 var btn2 = new Button();
                 btn2.label = Param.lang.info10; // 取消
                 btn2.x = 430;
                 btn2.y = 300;
                 btn2.width = 50;
-                btn2.addEventListener(MouseEvent.CLICK,this.cancelProgramm);
+                //btn2.addEventListener(MouseEvent.CLICK,this.cancelProgramm);
 
                 this.saveBtn = btn1;
                 this.cancleBtn = btn2;
