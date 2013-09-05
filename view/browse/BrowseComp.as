@@ -92,7 +92,7 @@ package view.browse
             {
                 try
                 {
-                    ExternalInterface.call(Param.jsFunc, jsons["status"]);
+                    ExternalInterface.call(Param.jsFunc, 5);
                 }
                 catch (e:Error)
                 {
@@ -201,11 +201,12 @@ package view.browse
 
         private function getFile() : Boolean
         {
-            if (this._fileRef.size > 5242880)
+            FileLog.trace(this._fileRef.size);
+            if (this._fileRef.size > 2097152) // 2M
             {
                 try
                 {
-                    ExternalInterface.call(Param.jsFunc, "M01108");
+                    ExternalInterface.call(Param.jsFunc, 3);
                 }
                 catch (e:Error)
                 {
@@ -216,7 +217,7 @@ package view.browse
             {
                 try
                 {
-                    ExternalInterface.call(Param.jsFunc, "M01107");
+                    ExternalInterface.call(Param.jsFunc, 4);
                 }
                 catch (e:Error)
                 {

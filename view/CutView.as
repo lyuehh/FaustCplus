@@ -179,7 +179,7 @@ package view
 			
 			this.saveBtn.mouseEnabled = true;
 			
-			ExternalInterface.call(Param.jsFunc, -1);
+			ExternalInterface.call(Param.jsFunc, 6);
             //var reload = new URLRequest("javascript:window.location.reload(true)");
             //navigateToURL(reload, "_self");
             return;
@@ -228,11 +228,12 @@ package view
             var _json = loader.data.match(/\{.+\}/)[0];
             var returnData = JSON.parse(_json);
             FileLog.trace('return data:' + JSON.stringify(returnData));
-			if (returnData["status"] == "1")
+            FileLog.trace(returnData["is_success"]);
+			if (returnData["is_success"])
             {
 				try
                 {
-                    ExternalInterface.call(Param.jsFunc, returnData["status"]);
+                    ExternalInterface.call(Param.jsFunc, 1);
                 }
                 catch (e:Error)
                 {
@@ -242,7 +243,7 @@ package view
             {
                 try
                 {
-                    ExternalInterface.call(Param.jsFunc, returnData["status"]);//系统繁忙，请稍后再试。
+                    ExternalInterface.call(Param.jsFunc, 2);//系统繁忙，请稍后再试。
                 }
                 catch (e:Error)
                 {
@@ -260,7 +261,14 @@ package view
 			
             var tgt = event.target as URLLoader;
             tgt.removeEventListener(IOErrorEvent.IO_ERROR, this.errorHandler);
-            navigateToURL(new URLRequest("javascript:alert(\'上传失败，请重新上传。\')"), "_self");
+            try
+            {
+                ExternalInterface.call(Param.jsFunc, 2);//系统繁忙，请稍后再试。
+            }
+            catch (e:Error)
+            {
+            }
+            //navigateToURL(new URLRequest("javascript:alert(\'上传失败，请重新上传。\')"), "_self");
             return;
         }
 

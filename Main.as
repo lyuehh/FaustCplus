@@ -108,8 +108,8 @@ package
 
 		//页面调用上传
 		private function jscall_updateAvatar() {
-			if(ExternalInterface.call(Param.jsFunc, 2) == 1)
-				this.cutView.updateAvatar(null);
+			//if(ExternalInterface.call(Param.jsFunc, 7) == 1)
+			//	this.cutView.updateAvatar(null);
 		}
 
     }
