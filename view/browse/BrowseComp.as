@@ -118,7 +118,32 @@ package view.browse
 
 
         private function refPicOK(event:Event) : void
-        {
+        {         
+            FileLog.trace(this._fileRef);
+            // check file         
+            if (this._fileRef.size > 2097152) // 2M
+            {
+                try
+                {
+                    ExternalInterface.call(Param.jsFunc, 3);
+                }
+                catch (e:Error)
+                {
+                }
+                return;
+            }
+            if (!/.+\.(jpg|png|gif|jpeg)$/i.test(this._fileRef.name))
+            {
+                try
+                {
+                    ExternalInterface.call(Param.jsFunc, 4);
+                }
+                catch (e:Error)
+                {
+                }
+                return;
+            }
+            
             this._picLoader = new Loader();
             this._picLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.passImgToModel);
             this._picLoader.loadBytes(this._fileRef.data);
@@ -184,6 +209,7 @@ package view.browse
             this.removeEventListener(Event.ADDED_TO_STAGE, this.onStage);
             var _loc_2 = this.root as Main;
             this.Version = _loc_2.Version;
+            FileLog.trace('Version: ' + _loc_2.Version);
             this._parent = this.parent as CutView;
             return;
         }
@@ -201,7 +227,6 @@ package view.browse
 
         private function getFile() : Boolean
         {
-            FileLog.trace(this._fileRef.size);
             if (this._fileRef.size > 2097152) // 2M
             {
                 try

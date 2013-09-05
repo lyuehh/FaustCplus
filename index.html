@@ -26,36 +26,47 @@
 
 					case '1':
 						alert('upload succeed!');
-						var time = new Date().getTime();
-						document.getElementById('avatar_priview').innerHTML = "Avatar Priview: <img src='php/avatar_1.jpg?" + time + "'/> <br/> Source Image: <img src='php/avatar_2.jpg?" + time + "'/>";
 					break;
 
 					case '2':
-						if(confirm('js call upload')){
-							return 1;
-						}else{
-							return 0;
-						}
+						alert('upload error');
+					break;
+                    
+                    case '3':
+						alert('file too large');
+					break;
+                    
+                    case '4':
+						alert('not a image file');
+					break;
+                    
+                    case '5':
+						alert('open file error');
 					break;
 
-					case '-1':
+					case '6':
 						alert('cancel!');
-						window.location.href = "#";
-					break;
-					case '-2':
-						alert('upload failed!');
-						window.location.href = "#";
 					break;
 
 					default:
-						alert(typeof(status) + ' ' + status);
+						alert('status: ' + status);
 				} 
 			}
+            /*
+            状态码:
+            1 成功
+            2 失败
+            3 文件太大
+            4 文件不是图片
+            5 文件打开失败
+            6 点击取消按钮
+            7 使用js调用保存
+            */
 			var flashvars = {
 			  "jsfunc":"uploadevent",
 			  "imgUrl":"",
-			  "lang": 'zh_cn',
-			  "uploadSrc":false,// 是否允许传http src
+			  "lang": 'en_us', // en_us, zh_cn, zh_tw
+			  "uploadSrc":false,
 			  "showBrow":true,
 			  "showCame":true,
 			  "uploadUrl":"./php/saveavater.php?action=u%26a=1%26b=2"
@@ -64,7 +75,7 @@
 			var params = {
 				menu: "false",
 				scale: "noScale",
-				allowFullscreen: "true",
+				allowFullscreen: "false",
 				allowScriptAccess: "always",
 				wmode:"transparent",
 				bgcolor: "#FFFFFF"
