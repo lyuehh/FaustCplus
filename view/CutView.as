@@ -228,7 +228,6 @@ package view
             var _json = loader.data.match(/\{.+\}/)[0];
             var returnData = JSON.parse(_json);
             FileLog.trace('return data:' + JSON.stringify(returnData));
-            FileLog.trace(returnData["is_success"]);
 			if (returnData["is_success"])
             {
 				try
