@@ -48,7 +48,10 @@ package model
                 "info7": "放大",
                 "info8": "預覽",
                 "info9": "保存",
-                "info10": "取消"
+                "info10": "取消",
+                "info11": "沒有檢測到攝像頭",
+                "info12": "1.檢查電腦是否連接攝像頭。\n2.檢查攝像頭是否被其他程序佔用。\n3.檢查是否拒絕了FlashPlayer的訪問：鼠標右鍵->設置->允許。\n4.如果不是以上原因，請嘗試刷新頁面",
+                "info13": "拍照"
             },
             "en_us": {
                 "info1": "Select JPG, GIF, PNG file, and < 2M",
