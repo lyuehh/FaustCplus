@@ -305,7 +305,7 @@ package view.browse
 					cameraBtn.mouseEnabled = true;
 					cameraBtnAddEvents();
 				}
-				this._parent.localPicArea.setLocalPicSize(this._avatarModel.bmd);
+				//this._parent.localPicArea.setLocalPicSize(this._avatarModel.bmd);
                 this.label.visible = true;
 				//stop();
             }
