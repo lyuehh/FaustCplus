@@ -304,8 +304,8 @@ package view
             if (this.cameraArea == null)
             {
                 this.cameraArea = new CameraComp(this);
-                this.cameraArea.x = 139;// 199
-                this.cameraArea.y = 80;
+                this.cameraArea.x = 20;// 199
+                this.cameraArea.y = 65;
                 addChild(this.cameraArea);
             }
             else if (this.cameraArea.visible == false)

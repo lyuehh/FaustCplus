@@ -254,7 +254,7 @@
             this.cameraBtn.label = Param.lang.info13; // 拍照
             this.cameraBtn.width = 50;
             this.cameraBtn.x = 96;
-            this.cameraBtn.y = 345;
+            this.cameraBtn.y = 310;
             this.cameraBtn.addEventListener(MouseEvent.CLICK, this.beginCountDown);
             addChildAt(this._videoBg, 0);
             addChildAt(this._video, 1);
